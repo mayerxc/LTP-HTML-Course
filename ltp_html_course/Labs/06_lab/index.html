@@ -22,14 +22,12 @@
         td {
             padding: 5px 0px 5px 0px;
         }
-        #left {
-            
+        .divideRight {
+            border-right: 1px solid #000;
         }
-        #middle{
-    
-        }
-        #right {
-        
+        .ctr {
+            text-align: center;
+            padding: 3px 8px 3px 8px;
         }
     </style>
 </head>
@@ -203,6 +201,111 @@
                         <input type="text" id="otherAllergicText" name="otherAllergicText" />
                     </td>
                 </tr>
+                
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>Do you have, or have you had, any of the following?</legend>
+            <table class="ctr">
+                <tr>
+                    <td>
+                        <label for="HIV">AIDS/HIV Positive</label>
+                    </td>
+                    <td class="hundred divideRight">
+                        <input id="HIV" name="HIV" type="radio" value="Yes" />Yes
+                        <input id="HIV" name="HIV" type="radio" value="No" />No
+                    </td>
+                    <td>
+                        <label for="cortisone">Cortisone Medicine</label>
+                    </td>
+                    <td class="hundred divideRight">
+                        <input id="cortisone" name="cortisone" type="radio" value="Yes" />Yes
+                        <input id="cortisone" name="cortisone" type="radio" value="No" />No
+                    </td>
+                    <td>
+                        <label for="Hemophilia">Hemophilia</label>
+                    </td>
+                    <td class="hundred divideRight">
+                        <input id="Hemophilia" name="Hemophilia" type="radio" value="Yes" />Yes
+                        <input id="Hemophilia" name="Hemophilia" type="radio" value="No" />No
+                    </td>
+                    <td>
+                        <label for="Radiation">Radiation Treatments</label>
+                    </td>
+                    <td class="hundred divideRight">
+                        <input id="Radiation" name="Radiation" type="radio" value="Yes" />Yes
+                        <input id="Radiation" name="Radiation" type="radio" value="No" />No
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <label for="AD">Alzheimer's Disease</label>
+                    </td>
+                    <td class="hundred divideRight">
+                        <input id="AD" name="AD" type="radio" value="Yes" />Yes
+                        <input id="AD" name="AD" type="radio" value="No" />No
+                    </td>
+                    <td>
+                        <label for="cortisone">Diabetes</label>
+                    </td>
+                    <td class="hundred">
+                        <input id="Diabetes" name="Diabetes" type="radio" value="Yes" />Yes
+                        <input id="Diabetes" name="Diabetes" type="radio" value="No" />No
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <label for="Anaphylaxis">Anaphylaxis</label>
+                    </td>
+                    <td class="hundred divideRight">
+                        <input id="Anaphylaxis" name="Anaphylaxis" type="radio" value="Yes" />Yes
+                        <input id="Anaphylaxis" name="Anaphylaxis" type="radio" value="No" />No
+                    </td>
+                    <td>
+                        <label for="addiction">Drug addiction</label>
+                    </td>
+                    <td class="hundred">
+                        <input id="addiction" name="addiction" type="radio" value="Yes" />Yes
+                        <input id="addiction" name="addiction" type="radio" value="No" />No
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <label for="Anemia">Anemia</label>
+                    </td>
+                    <td class="hundred divideRight">
+                        <input id="Anemia" name="Anemia" type="radio" value="Yes" />Yes
+                        <input id="Anemia" name="Anemia" type="radio" value="No" />No
+                    </td>
+                    <td>
+                        <label for="Winded">Easily Winded</label>
+                    </td>
+                    <td class="hundred">
+                        <input id="Winded" name="Winded" type="radio" value="Yes" />Yes
+                        <input id="Winded" name="Winded" type="radio" value="No" />No
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td>
+                        <label for="Angina">Angina</label>
+                    </td>
+                    <td class="hundred divideRight">
+                        <input id="Angina" name="Angina" type="radio" value="Yes" />Yes
+                        <input id="Angina" name="Angina" type="radio" value="No" />No
+                    </td>
+                    <td>
+                        <label for="Emphysema">Emphysema</label>
+                    </td>
+                    <td class="hundred">
+                        <input id="Emphysema" name="Emphysema" type="radio" value="Yes" />Yes
+                        <input id="Emphysema" name="Emphysema" type="radio" value="No" />No
+                    </td>
+                </tr>
+                
                 
             </table>
         </fieldset>
