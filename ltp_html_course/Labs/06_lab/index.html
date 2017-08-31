@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab #6</title>
+    <style>
+        #yesNoQuestions {
+            width: 100%;
+            min-width: 810px;
+        }
+        .hundred {
+            min-width: 120px;
+            text-align: left;
+        }
+        table {
+            border-collapse: collapse;
+            min-width: 810px;
+        }
+        tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
+        td {
+            padding: 5px 0px 5px 0px;
+        }
+        #left {
+            
+        }
+        #middle{
+    
+        }
+        #right {
+        
+        }
+    </style>
+</head>
+
+<body>
+    <form action "#" method="post">
+        <label for="name">Patient Name</label>
+        <input type="text" id="name" name="patientName" placeholder="Full Name" />
+        <label for="birth_date">Birth Date</label>
+        <input type="date" id="birth_date" name="dob" />
+        <p>Although dental personnel primarily treat the area in and around your mouth, your mouth is a part of your entire body. Health problems that you may have, or medication that you maybe taking could have animportant interrelationship with the dentistry you receive. Thank you for answering the following questions.</p>
+        <table id="yesNoQuestions">
+            <tr>
+                <td>
+                    <label for="underCare">Are you under a physician's care now?</label>
+                </td>
+                <td class="hundred">
+                    <input id="underCare" name="underCare" type="radio" value="Yes" />Yes
+                    <input id="underCare" name="underCare" type="radio" value="No" />No
+                </td>
+                <td>
+                    <label for="underCareText">If yes, please explain:</label>
+                    <input type="text" id="underCareText" name="underCareText" />
+                </td>   
+            </tr>
+            <tr>
+                <td>
+                    <label for="hospitalized">Have you ever been hospitalized or had a major operation?</label>
+                </td>
+                <td class="hundred">
+                    <input id="hospitalized" name="hospitalized" type="radio" value="Yes" />Yes
+                    <input id="hospitalized" name="hospitalized" type="radio" value="No" />No
+                </td>
+                <td>
+                    <label for="hospitalizedText">If yes, please explain:</label>
+                    <input type="text" id="hospitalizedText" name="hospitalizedText" />
+                </td>
+            </tr>
+                
+            <tr>
+                <td>
+                    <label for="neckInjury">Have you ever had a serious head or neck injury?</label>
+                </td>
+                <td class="hundred">
+                    <input id="neckInjury" name="neckInjury" type="radio" value="Yes" />Yes
+                    <input id="neckInjury" name="neckInjury" type="radio" value="No" />No
+                </td>
+                <td>
+                    <label for="hospitaneckInjuryText">If yes, please explain:</label>
+                    <input type="text" id="neckInjuryText" name="neckInjury" />
+                </td>  
+            </tr>
+            <tr>
+                <td>
+                    <label for="medications">Are you taking any medications, pills, or drugs?</label>
+                </td>
+                <td class="hundred">
+                    <input id="medications" name="medications" type="radio" value="Yes" />Yes
+                    <input id="medications" name="medications" type="radio" value="No" />No
+                </td>
+                <td>
+                    <label for="medicationsText">If yes, please explain:</label>
+                    <input type="text" id="medications" name="medicationsText" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="redux">Do you take, or have you taken, Phen-Fen or Redux?</label>
+                </td>
+                <td class="hundred">
+                    <input id="redux" name="redux" type="radio" value="Yes" />Yes
+                    <input id="redux" name="redux" type="radio" value="No" />No
+                </td>
+                <td>
+                    <label for="reduxText">If yes, please explain:</label>
+                    <input type="text" id="reduxText" name="reduxText" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="bisphosphonates">Have you ever taken Fosamax, Boniva, Actonel or any other medications containing bisphosphonates?</label>
+                </td>
+                <td class="hundred">
+                    <input id="bisphosphonates" name="bisphosphonates" type="radio" value="Yes" />Yes
+                    <input id="bisphosphonates" name="bisphosphonates" type="radio" value="No" />No
+                </td>
+                <td>
+                    <label for="bisphosphonatesText">If yes, please explain:</label>
+                    <input type="text" id="bisphosphonatesText" name="bisphosphonatesText" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="diet">Are you on a special diet?</label>
+                </td>
+                <td class="hundred">
+                    <input id="diet" name="diet" type="radio" value="Yes" />Yes
+                    <input id="diet" name="diet" type="radio" value="No" />No
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="tobacco">Do you use tobacco?</label>
+                </td>
+                <td class="hundred">
+                    <input id="tobacco" name="tobacco" type="radio" value="Yes" />Yes
+                    <input id="tobacco" name="tobacco" type="radio" value="No" />No
+                </td>
+                <td>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="drugs">Do you use controlled substances?</label>
+                </td>
+                <td class="hundred">
+                    <input id="drugs" name="drugs" type="radio" value="Yes" />Yes
+                    <input id="drugs" name="drugs" type="radio" value="No" />No
+                </td>
+                <td>
+                </td>
+            </tr>
+        </table>
+        <fieldset>
+            <legend>Women: are you</legend>
+            <table>
+                <tr>
+                    <td>
+                        <label for="pregnant">Pregnant/trying to become pregnant?</label>
+                    </td>
+                    <td class="hundred">
+                        <input id="pregnant" name="pregnant" type="radio" value="Yes" />Yes
+                        <input id="pregnant" name="pregnant" type="radio" value="No" />No
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="contraceptives">Taking oral contraceptives?</label>
+                    </td>
+                    <td class="hundred">
+                        <input id="contraceptives" name="contraceptives" type="radio" value="Yes" />Yes
+                        <input id="contraceptives" name="contraceptives" type="radio" value="No" />No
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        
+        <fieldset>
+            <legend>Are you allergic to any of the following?</legend>
+            <table>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="allergic" value="Aspirin">Aspirin
+                        <input type="checkbox" name="allergic" value="Penicilin">Penicilin
+                        <input type="checkbox" name="allergic" value="Codeine">Codeine
+                        <input type="checkbox" name="allergic" value="Local anesthetics">Local anesthetics
+                        <input type="checkbox" name="allergic" value="Acrylic">Acrylic
+                        <input type="checkbox" name="allergic" value="Metal">Metal
+                        <input type="checkbox" name="allergic" value="Latex">Latex
+                        <input type="checkbox" name="allergic" value="Sulfa drugs">Sulfa drugs                     
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="allergic" value="other">Other
+                    </td>
+                    <td>
+                        <label for="otherAllergicText">If yes, please explain:</label>
+                        <input type="text" id="otherAllergicText" name="otherAllergicText" />
+                    </td>
+                </tr>
+                
+            </table>
+        </fieldset>
+        
+        
+        
+        
+    </form>
+</body>
+
+</html>
