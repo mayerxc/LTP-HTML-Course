@@ -3,6 +3,11 @@
 
 <head>
     <title>Lab #6</title>
+    
+<!-- Trying to add mobile friendly to the code-->
+    <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
     <style>
         #yesNoQuestions {
             width: 100%;
@@ -30,6 +35,7 @@
             padding: 3px 8px 3px 8px;
         }
     </style>
+    
 </head>
 
 <body>
@@ -803,6 +809,19 @@
             </table>
         </fieldset>
         
+        <br/>
+        <label for="comments">Comments:</label>
+        <input type="text" id="comments" name="comments" placeholder="Comments here..." />
+        
+        
+        <fieldset>
+            <p>To the best of my knowlegde, the questions on this form have been accurately answered. I understand that providing incorrect information can be dangerous to my (or patients) health. it is my responsibility to inform the dental office of any changes in medical status.</p>
+            <hr>
+            <label for="signature">Signature of patient, parent or guardian</label>
+            <input id="signature" name="signature" type="text" />
+            <label for="signatureDate">Signature of patient, parent or guardian</label>
+            <input id="signatureDate" name="signatureDate" type="date" />
+        </fieldset>
         
         
         
