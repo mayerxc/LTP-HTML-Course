@@ -1,0 +1,14 @@
+img {
+    height: 200px;
+    width: 200px;
+    float: right;
+    background-color:red;
+    border-style: dashed;
+    border-width: 10px;
+    border-color: blue;
+    margin: 60px 20px 60px 20px;
+    outline-width: 25px;
+    outline-style: groove;
+    outline-color: yellow;
+    
+}
