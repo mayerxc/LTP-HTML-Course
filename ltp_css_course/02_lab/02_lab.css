@@ -1,6 +1,26 @@
+body {
+    background-image: url(http://res.cloudinary.com/mayerxc/image/upload/o_19/v1504888866/brad-fickeisen-361022_o5peiw.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
 h1 {
     font-family: 'Noto Serif', serif;
+    font-family: 'Anton', sans-serif;
 }
 ul li {
     list-style: square;
+}
+#my_menu {
+    background-color: lightblue;
+}
+.submenu ul {
+    display: none;
+}
+.submenu li {
+    list-style-type: none;
+}
+.submenu:hover ul {
+    display: block;
+    list-style-type: none;
 }
