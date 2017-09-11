@@ -8,10 +8,10 @@
     position: fixed;
     top:300px;
     left:200px;
-    
+    z-index: -1;
 }
 #img2 {
     position: fixed;
     top:500px;
-    
+    position: absolute;
 }
