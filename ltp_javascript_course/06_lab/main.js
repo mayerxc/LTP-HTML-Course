@@ -14,7 +14,7 @@ window.onload = function() {
     
     window.onkeypress = function(e){
         console.log(e);
-        alert('You pressed the '+ e.key + ' key!');
+        alert('You pressed the ' + e.key + ' key!');
     }
 }
 
