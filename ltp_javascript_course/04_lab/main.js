@@ -10,7 +10,7 @@ window.onload = function () {
         
         for (var i = 0; text.length > i; i++) {
             if (text[i] === "C"){
-                console.log("Made it inside loop!")
+                console.log("Made it inside loop!");
                 for (var j = i; j < (myName.length + i); j++){
                     timesFound.push(text[j]);
                 }
