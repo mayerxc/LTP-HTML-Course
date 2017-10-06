@@ -16,13 +16,24 @@
     </form>
     <br/>
     <?php
-        $count = 0
-        $arr = array("Commodore 64",
-                        "ZX Spectrum",
-                        "IBM PC 5150", 
-                        "Apple Macintosh",
-                        "Amstrad CPC 464", 
-                        "BBC Micro",);
+        if (isset($_REQUEST['delete'])){
+            //delete stuff
+            print($_REQUEST['delete']);
+        } else {
+            //get stuff from csv and store in array and print it
+            $count = 0;
+            print("<form action=\"08_lab_activity1.php\" method=\"post\" >");
+            $csv = fopen("08_lab.csv", "r") or die("can't open csv");
+            while ($data = fgetcsv($csv, 1000, ",")) {
+                for ($x = 0;$x < count($data); $x++){
+                    print("$data[$x] <button name=\"delete\" value=\"$data[$x]\" type=\"submit\">Delete</button> <br/>");
+                    $count++;
+                }
+            }
+        }
+    
+    
+      /*  
         foreach ($arr as $value) {
             echo("$value <button id='$value'>delete</button><br/><br/>");
         }
@@ -30,7 +41,7 @@
     
     
     
-/*        if ( !isset($_REQUEST['add']) ) {
+        if ( !isset($_REQUEST['add']) ) {
             print("it's undefined<br/>");
             
             foreach($arr as $arrays) {
