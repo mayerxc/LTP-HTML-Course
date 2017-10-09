@@ -2,7 +2,22 @@
 <html>
     <head>
         <title>Calculate Student Scores</title>
+        <style>
+            table, th {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            th {
+                width: 100px;
+            }
+            td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                text-align: center;
+            }
         
+        
+        </style>
     </head>
     <body>
         <h1>Calculate test Scores for students</h1>
@@ -26,6 +41,8 @@
                                 [84,77,81,90],
                                 [84,81,79,100]]];
             
+            
+            $studentsOnly = array_keys($students);
             
             
             print_r($tests);
@@ -56,13 +73,15 @@
                 $sum = 0;
             }
         
-            print("<strong>Each student's average test score:</strong>");
+            print("<h1>Each student's average test score:</h1>");
             print("<br/>");
             print_r($students);
             print("<br/>");
             print("<br/>The above array is used to calculate the student's average score on all four tests:<br/>");
             print("<br/>");
-        
+        ?>
+    
+        <?php
             
             foreach ($students as $key => $value) {
                 //Name of each student
@@ -75,15 +94,159 @@
                     $sum = $value["Tests"][$i] + $sum;
                 }
                 //use sum from for loop to calculate average for each student
-                $average = $sum / count($value["Tests"]);
+                $average = $sum / count( $value["Tests"] );
                 print("$key's average test score is: $average");
                 print("<br/>");
                 print("<br/>");
                 //next student
             }
-        
-            
-        
         ?>
+        
+        <h1>Creating table with arrays</h1>
+        <table>
+            <tr>
+                <th></th><th>Test 1</th><th>Test 2</th><th>Test 3</th><th>Test 4</th><th>Average</th>
+            </tr>
+            <tr>
+                <?php 
+                    $studentRow = 0;
+                    print("<td>$studentsOnly[$studentRow]</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][0] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][1] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][2] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][3] . "</td>");
+                    $average = ($tests["Tests"][$studentRow][0] + $tests["Tests"][$studentRow][1] + $tests["Tests"][$studentRow][2] + $tests["Tests"][$studentRow][3]) / 4;
+                    print("<td>" . $average . "</td>");
+                ?> 
+            </tr>
+            <tr>
+                <?php 
+                    $studentRow = 1;
+                    print("<td>$studentsOnly[$studentRow]</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][0] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][1] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][2] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][3] . "</td>");
+                    $average = ($tests["Tests"][$studentRow][0] + $tests["Tests"][$studentRow][1] + $tests["Tests"][$studentRow][2] + $tests["Tests"][$studentRow][3]) / 4;
+                    print("<td>" . $average . "</td>");
+                ?> 
+            </tr>
+            <tr>
+                <?php 
+                    $studentRow = 2;
+                    print("<td>$studentsOnly[$studentRow]</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][0] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][1] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][2] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][3] . "</td>");
+                    $average = ($tests["Tests"][$studentRow][0] + $tests["Tests"][$studentRow][1] + $tests["Tests"][$studentRow][2] + $tests["Tests"][$studentRow][3]) / 4;
+                    print("<td>" . $average . "</td>");
+                ?> 
+            </tr>
+            <tr>
+                <?php 
+                    $studentRow = 3;
+                    print("<td>$studentsOnly[$studentRow]</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][0] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][1] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][2] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][3] . "</td>");
+                    $average = ($tests["Tests"][$studentRow][0] + $tests["Tests"][$studentRow][1] + $tests["Tests"][$studentRow][2] + $tests["Tests"][$studentRow][3]) / 4;
+                    print("<td>" . $average . "</td>");
+                ?> 
+            </tr>
+            <tr>
+                <?php 
+                    $studentRow = 4;
+                    print("<td>$studentsOnly[$studentRow]</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][0] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][1] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][2] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][3] . "</td>");
+                    $average = ($tests["Tests"][$studentRow][0] + $tests["Tests"][$studentRow][1] + $tests["Tests"][$studentRow][2] + $tests["Tests"][$studentRow][3]) / 4;
+                    print("<td>" . $average . "</td>");
+                ?> 
+            </tr>
+            <tr>
+                <?php 
+                    $studentRow = 5;
+                    print("<td>$studentsOnly[$studentRow]</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][0] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][1] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][2] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][3] . "</td>");
+                    $average = ($tests["Tests"][$studentRow][0] + $tests["Tests"][$studentRow][1] + $tests["Tests"][$studentRow][2] + $tests["Tests"][$studentRow][3]) / 4;
+                    print("<td>" . $average . "</td>");
+                ?> 
+            </tr>
+            <tr>
+                <?php 
+                    $studentRow = 6;
+                    print("<td>$studentsOnly[$studentRow]</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][0] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][1] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][2] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][3] . "</td>");
+                    $average = ($tests["Tests"][$studentRow][0] + $tests["Tests"][$studentRow][1] + $tests["Tests"][$studentRow][2] + $tests["Tests"][$studentRow][3]) / 4;
+                    print("<td>" . $average . "</td>");
+                ?> 
+            </tr>
+            <tr>
+                <?php 
+                    $studentRow = 7;
+                    print("<td>$studentsOnly[$studentRow]</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][0] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][1] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][2] . "</td>");
+                    print("<td>" . $tests["Tests"][$studentRow][3] . "</td>");
+                    $average = ($tests["Tests"][$studentRow][0] + $tests["Tests"][$studentRow][1] + $tests["Tests"][$studentRow][2] + $tests["Tests"][$studentRow][3]) / 4;
+                    print("<td>" . $average . "</td>");
+                ?> 
+            </tr>
+            
+            <tr>
+                <td>Average</td>
+                <?php
+                    $testColumn = 0;
+                    $sum = 0;
+                    for ($i = 0; $i < count($tests["Tests"]); $i++) {
+                        $sum = $sum + $tests["Tests"][$i][$testColumn];
+                    }
+                    $average = $sum / count($tests["Tests"]);
+                    print("<td>" . $average . "</td>");
+                
+                ?>
+                <?php
+                    $testColumn = 1;
+                    $sum = 0;
+                    for ($i = 0; $i < count($tests["Tests"]); $i++) {
+                        $sum = $sum + $tests["Tests"][$i][$testColumn];
+                    }
+                    $average = $sum / count($tests["Tests"]);
+                    print("<td>" . $average . "</td>");
+                ?>
+                <?php
+                    $testColumn = 2;
+                    $sum = 0;
+                    for ($i = 0; $i < count($tests["Tests"]); $i++) {
+                        $sum = $sum + $tests["Tests"][$i][$testColumn];
+                    }
+                    $average = $sum / count($tests["Tests"]);
+                    print("<td>" . $average . "</td>");
+                ?>
+                <?php
+                    $testColumn = 3;
+                    $sum = 0;
+                    for ($i = 0; $i < count($tests["Tests"]); $i++) {
+                        $sum = $sum + $tests["Tests"][$i][$testColumn];
+                    }
+                    $average = $sum / count($tests["Tests"]);
+                    print("<td>" . $average . "</td>");
+                ?>
+                <td>
+                    <!--average of average could go here???-->
+                </td>
+            </tr>
+        </table>
     </body>
 </html>
