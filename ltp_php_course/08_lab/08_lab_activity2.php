@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html>
     <head>
-<<<<<<< HEAD
-        <title>Test Scores</title>
-=======
         <title>Calculate Student Scores</title>
         <style>
             table, th {
@@ -18,25 +15,13 @@
                 border-collapse: collapse;
                 text-align: center;
             }
->>>>>>> 82e02f7bac9e35992ed4b49f9122d460333c8170
         
         
         </style>
     </head>
     <body>
-<<<<<<< HEAD
-        <h1>Calculate test Scores for students!</h1>
-        <form method="post" action="08_lab_activity2.php">
-            <label for="name">Student Name</label>
-            <input name="name" id="name" type="text"/>
-            <label for="test">Test average</label>
-            <input name="test" id="test" type="text"/>
-            <button type="submit">Calculate</button>
-        </form>
-=======
         <h1>Calculate test Scores for students</h1>
         
->>>>>>> 82e02f7bac9e35992ed4b49f9122d460333c8170
         <?php
             $students = ["Smith"=>["Tests"=>[98,75,100, 91]],
                          "Johnson"=>["Tests"=>[67,88, 85, 81]], 
