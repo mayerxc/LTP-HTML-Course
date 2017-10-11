@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Tax Calculator</title>
+        <title>Test Scores</title>
         
     </head>
     <body>
         <h1>Calculate test Scores for students!</h1>
         <form method="post" action="08_lab_activity2.php">
-            <label for="name">Full Name</label>
+            <label for="name">Student Name</label>
             <input name="name" id="name" type="text"/>
-            <label for="income">Income</label>
-            <input name="income" id="income" type="text"/>
-            <button type="submit">Calculate tax owed</button>
+            <label for="test">Test average</label>
+            <input name="test" id="test" type="text"/>
+            <button type="submit">Calculate</button>
         </form>
         <?php
             $students = ["Smith"=>["Tests"=>[98,75,100, 91]],

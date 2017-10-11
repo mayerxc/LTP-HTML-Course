@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>First Mobile Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        #footer {
+            position: fixed;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;
+        }
+    </style>
+    <script src="key.js"></script>
+    <script>
+        window.onload = function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(onPosition, onError);
+            } else {
+                alert("Location information not available");
+            }
+
+        }
+
+        function onPosition(position) {
+            console.log(position);
+            var lat = position.coords.latitude;
+            var long = position.coords.longitude;
+            document.getElementById('lat').innerHTML = "<strong>" + lat + "</strong>";
+            document.getElementById('long').innerHTML = "<strong>" + long + "</strong>";
+
+            var url = "https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=" + lat + "," + long;
+            url += "&radius=10000&type=restaurant";
+            url += "&key=" + key;
+            console.log(url);
+            var out = "";
+            $.getJSON(url, function(data) {
+                var results = data.results;
+                $.each(results, function() {
+                    out += "<h2>" + this.name + "</h2>";
+                    out += `<p>${this.vicinity}</p>`;
+                    out += `<p>Price level: ${this.price_level}`;
+                });
+                $("#places").html(out);
+                
+            });
+
+        }
+
+        function onError(e) {
+            alert(e.message);
+        }
+    </script>
+</head>
+
+<body>
+    <div data-role="page">
+
+        <div data-role="header">
+            <h1>Geolocation</h1>
+        </div>
+
+        <div data-role="main" class="ui-content">
+            <p>Latitidue: <span id="lat"></span></p>
+            <p>Longitude: <span id="long"></span></p>
+
+            <div id="places"></div>
+        </div>
+        <div data-role="footer" id="footer">
+            <h1>Copyright &copy;2017</h1>
+        </div>
+
+    </div>
+</body>
+</html>
