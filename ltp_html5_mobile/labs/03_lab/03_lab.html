@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab #3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--stylesheets-->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
+    <!--Scripts-->
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <script>
+        window.onload = function() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(onPosition, onError);
+            } else {
+                alert('Location not available')
+            }
+        }
+        
+        function onPosition(position) {
+            
+        }
+    </script>
+    <style>
+        #footer {
+            position: fixed;
+            left: 0px;
+            bottom: 0px;
+            width: 100%;
+
+        }
+    </style>
+
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header">
+            <h1>Mobile Map</h1>
+        </div>
+        <div data-role="main">
+
+        </div>
+        <div data-role="footer">
+            <h1>Lab #3</h1>
+        </div>
+    </div>
+</body>
+
+</html>
