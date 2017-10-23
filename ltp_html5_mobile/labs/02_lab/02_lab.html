@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab #1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--stylesheets-->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
+    <!--Scripts-->
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <style>        
+        #left, #right {
+            width: 47%;
+            padding: 5px;
+        }
+        #left {
+            float: left;
+        }
+        
+        #right {
+            float: right;
+        }
+        
+        /*Will not display footer or header for screens above 540*/
+        @media only screen and (min-width:540px) {
+            #title,
+            #footer {
+                display: none;
+            }   
+        }
+
+        /*Will not display picture if below 541,
+        will be one column below 541px*/
+        @media only screen and (max-width:541px) {
+            figure {
+                display: none;
+            }
+            
+             #left, #right {
+                width: 100%;
+                float: none;
+                padding: 0px;
+            }
+            
+            
+        }
+    </style>
+
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header">
+            <h1 id="title">Responsive title</h1>
+        </div>
+        <div data-role="main">
+            <div id="left">
+                <p>Lucas ipsum dolor sit amet evocii arkanis hissa xizor ranat gordin cornelius ithorian mantell greedo. Mustafar saurin windu rakata. Yowza xanatos greedo ishi quee. Calrissian wuher quarren moff skywalker anthos bith winter. Garindan solo borsk aurra garindan tython durron koon grizmallt. Hutt veers h'nemthean skakoan. Whaladon naboo darklighter aka rendar talz poggle ebe han. Kal tharin lars auril organa spar. Cato dak fosh yevetha halla vilim walon. Var derlin snivvian raa skakoan. Haruun droid aruzan veers whill darth. Bardan momaw vau defel. Boz tono luke darpa tatooine. Roan sebulba sidious skywalker kwi tharen aparo shawda. Omwati maul even secura. Vestara wyl jerjerrod ventress zekk ranat ugnaught. Neimoidia zabrak golda sifo-dyas windu. Dooku jinn luke timoliini dunwell porkins briqualon kalee cb-99. Shmi veknoid dunhausen abregado. Jobal vulptereen epicanthix calrissian latter anzati umbaran. Ben elrood jan p'w'eck oppo coway. Zev muunilinst rodian moff nar wedge kwa vilim. Gossam gand galen ors mara cade luke.</p>
+                <figure id="image">
+                    <img src="https://res.cloudinary.com/mayerxc/image/upload/v1469060859/treehouse_beer_zln4cu.jpg" width="300px" alt="treehouse beer is good" />
+                    <figcaption>Tree House beer is good.</figcaption>
+                </figure>
+
+                <p>Lucas ipsum dolor sit amet evocii arkanis hissa xizor ranat gordin cornelius ithorian mantell greedo. Mustafar saurin windu rakata. Yowza xanatos greedo ishi quee. Calrissian wuher quarren moff skywalker anthos bith winter. Garindan solo borsk aurra garindan tython durron koon grizmallt. Hutt veers h'nemthean skakoan. Whaladon naboo darklighter aka rendar talz poggle ebe han. Kal tharin lars auril organa spar. Cato dak fosh yevetha halla vilim walon. Var derlin snivvian raa skakoan. Haruun droid aruzan veers whill darth. Bardan momaw vau defel. Boz tono luke darpa tatooine. Roan sebulba sidious skywalker kwi tharen aparo shawda. Omwati maul even secura. Vestara wyl jerjerrod ventress zekk ranat ugnaught. Neimoidia zabrak golda sifo-dyas windu. Dooku jinn luke timoliini dunwell porkins briqualon kalee cb-99. Shmi veknoid dunhausen abregado. Jobal vulptereen epicanthix calrissian latter anzati umbaran. Ben elrood jan p'w'eck oppo coway. Zev muunilinst rodian moff nar wedge kwa vilim. Gossam gand galen ors mara cade luke.</p>
+                <p>Lucas ipsum dolor sit amet evocii arkanis hissa xizor ranat gordin cornelius ithorian mantell greedo. Mustafar saurin windu rakata. Yowza xanatos greedo ishi quee. Calrissian wuher quarren moff skywalker anthos bith winter. Garindan solo borsk aurra garindan tython durron koon grizmallt. Hutt veers h'nemthean skakoan. Whaladon naboo darklighter aka rendar talz poggle ebe han. Kal tharin lars auril organa spar. Cato dak fosh yevetha halla vilim walon. Var derlin snivvian raa skakoan. Haruun droid aruzan veers whill darth. Bardan momaw vau defel. Boz tono luke darpa tatooine. Roan sebulba sidious skywalker kwi tharen aparo shawda. Omwati maul even secura. Vestara wyl jerjerrod ventress zekk ranat ugnaught. Neimoidia zabrak golda sifo-dyas windu. Dooku jinn luke timoliini dunwell porkins briqualon kalee cb-99. Shmi veknoid dunhausen abregado. Jobal vulptereen epicanthix calrissian latter anzati umbaran. Ben elrood jan p'w'eck oppo coway. Zev muunilinst rodian moff nar wedge kwa vilim. Gossam gand galen ors mara cade luke.</p>
+            </div>
+            <div id="right">
+                <p>Lucas ipsum dolor sit amet evocii arkanis hissa xizor ranat gordin cornelius ithorian mantell greedo. Mustafar saurin windu rakata. Yowza xanatos greedo ishi quee. Calrissian wuher quarren moff skywalker anthos bith winter. Garindan solo borsk aurra garindan tython durron koon grizmallt. Hutt veers h'nemthean skakoan. Whaladon naboo darklighter aka rendar talz poggle ebe han. Kal tharin lars auril organa spar. Cato dak fosh yevetha halla vilim walon. Var derlin snivvian raa skakoan. Haruun droid aruzan veers whill darth. Bardan momaw vau defel. Boz tono luke darpa tatooine. Roan sebulba sidious skywalker kwi tharen aparo shawda. Omwati maul even secura. Vestara wyl jerjerrod ventress zekk ranat ugnaught. Neimoidia zabrak golda sifo-dyas windu. Dooku jinn luke timoliini dunwell porkins briqualon kalee cb-99. Shmi veknoid dunhausen abregado. Jobal vulptereen epicanthix calrissian latter anzati umbaran. Ben elrood jan p'w'eck oppo coway. Zev muunilinst rodian moff nar wedge kwa vilim. Gossam gand galen ors mara cade luke.</p>
+<!--
+                <figure id="image">
+                    <img src="https://res.cloudinary.com/mayerxc/image/upload/v1469060859/treehouse_beer_zln4cu.jpg" width="300px" alt="treehouse beer is good" />
+                    <figcaption>Tree House beer is good.</figcaption>
+                </figure>
+-->
+
+                <p>Lucas ipsum dolor sit amet evocii arkanis hissa xizor ranat gordin cornelius ithorian mantell greedo. Mustafar saurin windu rakata. Yowza xanatos greedo ishi quee. Calrissian wuher quarren moff skywalker anthos bith winter. Garindan solo borsk aurra garindan tython durron koon grizmallt. Hutt veers h'nemthean skakoan. Whaladon naboo darklighter aka rendar talz poggle ebe han. Kal tharin lars auril organa spar. Cato dak fosh yevetha halla vilim walon. Var derlin snivvian raa skakoan. Haruun droid aruzan veers whill darth. Bardan momaw vau defel. Boz tono luke darpa tatooine. Roan sebulba sidious skywalker kwi tharen aparo shawda. Omwati maul even secura. Vestara wyl jerjerrod ventress zekk ranat ugnaught. Neimoidia zabrak golda sifo-dyas windu. Dooku jinn luke timoliini dunwell porkins briqualon kalee cb-99. Shmi veknoid dunhausen abregado. Jobal vulptereen epicanthix calrissian latter anzati umbaran. Ben elrood jan p'w'eck oppo coway. Zev muunilinst rodian moff nar wedge kwa vilim. Gossam gand galen ors mara cade luke.</p>
+                <p>Lucas ipsum dolor sit amet evocii arkanis hissa xizor ranat gordin cornelius ithorian mantell greedo. Mustafar saurin windu rakata. Yowza xanatos greedo ishi quee. Calrissian wuher quarren moff skywalker anthos bith winter. Garindan solo borsk aurra garindan tython durron koon grizmallt. Hutt veers h'nemthean skakoan. Whaladon naboo darklighter aka rendar talz poggle ebe han. Kal tharin lars auril organa spar. Cato dak fosh yevetha halla vilim walon. Var derlin snivvian raa skakoan. Haruun droid aruzan veers whill darth. Bardan momaw vau defel. Boz tono luke darpa tatooine. Roan sebulba sidious skywalker kwi tharen aparo shawda. Omwati maul even secura. Vestara wyl jerjerrod ventress zekk ranat ugnaught. Neimoidia zabrak golda sifo-dyas windu. Dooku jinn luke timoliini dunwell porkins briqualon kalee cb-99. Shmi veknoid dunhausen abregado. Jobal vulptereen epicanthix calrissian latter anzati umbaran. Ben elrood jan p'w'eck oppo coway. Zev muunilinst rodian moff nar wedge kwa vilim. Gossam gand galen ors mara cade luke.</p>
+            </div>
+        </div>
+        <div id="footer" data-role="footer">
+            <h1>Lab #1</h1>
+        </div>
+
+    </div>
+</body>
+
+</html>
