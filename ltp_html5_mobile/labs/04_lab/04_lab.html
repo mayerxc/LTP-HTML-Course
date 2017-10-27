@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab #4</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--stylesheets-->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
+    <!--Scripts-->
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <style>
+        #footer {
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header">
+            <h1>JQuery Mobile basics</h1>
+        </div>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page1">Page 1</a></li>
+                <li><a href="#page2">Page 2</a></li>
+                <li><a href="#page3">Page 3</a></li>
+                <li><a href="#page4">Page 4</a></li>
+            </ul>
+        </div>
+        
+        <div data-role="main" class="ui-content">
+            <button class="ui-btn">I am a button</button>
+            <a href="https://google.com" target="_blank" class="ui-btn">Google</a>
+
+
+            <a href="#popupWindow" data-rel="popup" class="ui-btn">Popup!</a>
+            
+            <div id="popupWindow" data-role="popup">
+                <div data-role="header">
+                    <h1>Popup!</h1>
+                </div>
+                <div data-role="main" class="ui-content">
+                    <p>I am a popup! this is a lot of info, I hope this makes it wider.</p>
+                </div>
+                <div data-role="footer">
+                    <h3>Chris Mayer</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <div data-role="footer" class="ui-bar" id="footer">
+            <h1>Lab #4</h1>
+        </div>
+    </div>
+</body>
+
+</html>
