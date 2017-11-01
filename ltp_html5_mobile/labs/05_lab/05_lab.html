@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Lab #5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!--stylesheets-->
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+
+    <!--Scripts-->
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script src="hammer.js"></script>
+    <script src="hammer-time.min.js"></script>
+    <script>
+        window.onload = function() {
+            var h = window.innerHeight;
+            h = h - 100;
+            document.getElementById('main').style.height = h + "px";
+            var main = document.getElementById('main');
+            var hammertime = new Hammer(main);
+            hammertime.on("tap", function(e) {
+                console.log(e);
+                main.innerHTML = "<h1>Screen tapped</h1>";
+            });
+            hammertime.on("press", function(e) {
+                console.log(e.type);
+                main.innerHTML = "<h1>This time it was pressed!</h1>"; 
+            });
+            hammertime.on("swipeleft swiperight", function(e) {
+                console.log(e.type);
+                if (e.type === "swipeleft") {
+                    main.innerHTML = "<h1>swiped left</h1>";     
+                } else if (e.type === "swiperight"){
+                    main.innerHTML = "<h1>Swiped right</h1>"; 
+                }
+                
+            });
+            
+        }
+    </script>
+    <style>
+        #footer {
+            position: fixed;
+            bottom: 0px;
+            width: 100%;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div data-role="page">
+        <div data-role="header">
+            <h1>Gestures with Hammer.js</h1>
+        </div>
+        
+        <div id="main" data-role="main" class="ui-content">
+            
+        </div>
+
+        <div data-role="footer" id="footer">
+            <h1>Lab #5</h1>
+        </div>
+    </div>
+</body>
+
+</html>
