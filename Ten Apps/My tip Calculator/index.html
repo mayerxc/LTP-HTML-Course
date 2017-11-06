@@ -16,15 +16,38 @@
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 
+
+    <script>
+        $(document).ready(function() {
+            $('#tipPercent, #people').change(calculate);
+            $('#billAmount, #tipPercent, #people').on('input', calculate);
+        });
+
+        function calculate() {
+            var bill = $('#billAmount').val() * 1;
+            var tip = $('#tipPercent').val() / 100;
+            var people = $('#people').val() * 1;
+
+            var totalAmountPerPerson = ((bill + (bill * tip)) / people).toFixed(2);
+            var tipAmountPerPerson = ((bill * tip) / people).toFixed(2);
+            var amountText = `Total: $${totalAmountPerPerson}`;
+            var amountTip = `Tip: $${tipAmountPerPerson}`;
+            $('#tipAmountAns').html(amountTip);
+            $('#totalAmountAns').html(amountText);
+        }
+
+    </script>
     <style>
-        [data-role=page]{
+        [data-role=page] {
             display: flex;
             flex-flow: column;
             height: 100%;
         }
-        #result{
+
+        #result {
             flex-grow: 1;
         }
+
     </style>
 </head>
 
@@ -34,23 +57,31 @@
             <h1>Tip Calculator</h1>
         </div>
         <div role="main" class="ui-content">
-            <p>Tip Calculator</p>
+
             <form>
                 <label for="billAmount">Bill</label>
-                <input name="billAmount" placeholder="$0.00" id="billAmount" type="number" min="0" max="50000" step="0.01"/>
+                <input name="billAmount" placeholder="$0.00" id="billAmount" type="number" min="0" max="50000" step="0.01" />
                 <label for="tipPercent">Tip Percent</label>
                 <input name="tipPercent" id="tipPercent" data-highlight="true" step="1" min="0" max="50" value="15" type="range" />
                 <label for="people">Number of people</label>
-                <input name="people" id="people" data-highlight="true" step="1" min="0" max="20" value="1" type="range" />
+                <input name="people" id="people" data-highlight="true" step="1" min="1" max="50" value="1" type="range" />
             </form>
-            <div id="result">
-                <p id="tipAmountAns">Tip:</p>
-                <p id="totalAmountAns">Total:</p>
+            <div id="container">
+                <div>
+                    <span>Tip: </span><span id="tipAmountAns"></span>
+                </div>
+                <div>
+                    <span>Total:</span><span id="totalAmountAns"></span>    
+                </div>
+                
+                
             </div>
         </div>
+        <!--
         <div data-position="fixed" data-role="footer">
             <h1>Probably don't need a footer</h1>
         </div>
+-->
     </div>
 
 </body>
