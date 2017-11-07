@@ -19,33 +19,72 @@
 
     <script>
         $(document).ready(function() {
+            $('.showHideDiv').hide();
             $('#tipPercent, #people').change(calculate);
             $('#billAmount, #tipPercent, #people').on('input', calculate);
+
         });
 
         function calculate() {
-            var bill = $('#billAmount').val() * 1;
-            var tip = $('#tipPercent').val() / 100;
-            var people = $('#people').val() * 1;
+            var bill = $('#billAmount').val() * 1; //coerce to a number
+            var tip = parseFloat($('#tipPercent').val()) / 100; //divide by 100 to convert to percent
+            var people = $('#people').val() * 1; //coerce to a number
 
             var totalAmountPerPerson = ((bill + (bill * tip)) / people).toFixed(2);
+            totalAmountPerPerson = numberWithCommas(totalAmountPerPerson);
             var tipAmountPerPerson = ((bill * tip) / people).toFixed(2);
-            var amountText = `Total: $${totalAmountPerPerson}`;
-            var amountTip = `Tip: $${tipAmountPerPerson}`;
+            tipAmountPerPerson = numberWithCommas(tipAmountPerPerson);
+            var totalAmount = (bill + (bill * tip)).toFixed(2);
+            totalAmount = numberWithCommas(totalAmount);
+           
+            console.log(typeof totalAmount);
+
+            if (people === 1) {
+                var amountText = `$${totalAmountPerPerson}`;
+                var amountTip = `$${tipAmountPerPerson}`;
+                $('.showHideDiv').hide();
+            } else {
+                var amountText = `$${totalAmountPerPerson}/person`;
+                var amountTip = `$${tipAmountPerPerson}/person`;
+                var totalAmountText = `$${totalAmount}`
+                $('.showHideDiv').show();
+                $('.perPersonDiv').html(totalAmountText);
+
+            }
             $('#tipAmountAns').html(amountTip);
             $('#totalAmountAns').html(amountText);
+
+        }
+        //add commas using regex
+        function numberWithCommas(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
         }
 
     </script>
     <style>
+        /*
         [data-role=page] {
-            display: flex;
-            flex-flow: column;
             height: 100%;
         }
+*/
 
-        #result {
-            flex-grow: 1;
+        .container {
+            /*            display: flex;*/
+        }
+
+        .ui-grid-a {
+            /*            border: solid black 1px;*/
+            padding-top: 2rem;
+
+        }
+
+        .ui-block-a {
+            text-align: right;
+            padding-bottom: .5rem;
+        }
+
+        .ui-block-b {
+            padding-bottom: .5rem;
         }
 
     </style>
@@ -53,13 +92,13 @@
 
 <body>
     <div data-role="page">
-        <div data-role="header">
+        <div data-role="header" data-position="fixed">
             <h1>Tip Calculator</h1>
         </div>
         <div role="main" class="ui-content">
 
             <form>
-                <label for="billAmount">Bill</label>
+                <label for="billAmount">Bill Amount</label>
                 <input name="billAmount" placeholder="$0.00" id="billAmount" type="number" min="0" max="50000" step="0.01" />
                 <label for="tipPercent">Tip Percent</label>
                 <input name="tipPercent" id="tipPercent" data-highlight="true" step="1" min="0" max="50" value="15" type="range" />
@@ -67,21 +106,21 @@
                 <input name="people" id="people" data-highlight="true" step="1" min="1" max="50" value="1" type="range" />
             </form>
             <div id="container">
-                <div>
-                    <span>Tip: </span><span id="tipAmountAns"></span>
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">Tip:&nbsp;&nbsp;</div>
+                    <div class="ui-block-b" id="tipAmountAns">$0.00</div>
+                    <div class="ui-block-a">Total:&nbsp;&nbsp;</div>
+                    <div class="ui-block-b" id="totalAmountAns">$0.00</div>
+                    <div class="ui-block-a showHideDiv">Total Bill:&nbsp;&nbsp;</div>
+                    <div class="ui-block-b showHideDiv perPersonDiv">$0.00</div>
                 </div>
-                <div>
-                    <span>Total:</span><span id="totalAmountAns"></span>    
-                </div>
-                
-                
             </div>
         </div>
-        <!--
+
         <div data-position="fixed" data-role="footer">
             <h1>Probably don't need a footer</h1>
         </div>
--->
+
     </div>
 
 </body>
