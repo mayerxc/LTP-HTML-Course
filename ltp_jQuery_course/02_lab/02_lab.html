@@ -1,0 +1,49 @@
+<html>
+
+<head>
+    <title>Chapter 2 - Lab</title>
+    
+    <!--grab link for jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <!--produce list of classes    -->
+    <script>
+        $(document).ready(function(){
+            $.each($('li'), function(){
+                console.log($(this).attr('class'));
+                //grab results selector and make a list of the classes to output to page
+                $('#results').append('<li>' + $(this).attr('class') + '</li>');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>This is the first lab</h1>
+    <ul>
+        <li class="first">List Item</li>
+        <li class="second">List Item</li>
+        <li class="third">List Item</li>
+        <li class="nth">List Item</li>
+        <li class="blue">List Item</li>
+        <li class="green">List Item</li>
+        <li class="purple">List Item</li>
+        <li class="seventeen">List Item</li>
+        <li class="sixtyfour">List Item</li>
+        <li class="eleven-point-two">List Item</li>
+        <li class="learntoprogram">List Item</li>
+        <li class="jquery">List Item</li>
+        <li class="course">List Item</li>
+        <li class="alex">List Item</li>
+        <li class="bowers">List Item</li>
+        <li class="course">List Item</li>
+    </ul>
+    
+    <!--Post results to list below-->
+    <div>
+        <h2>List of classes for the above list items:</h2>
+        <ul id="results"></ul>
+    </div>
+</body>
+
+</html>
