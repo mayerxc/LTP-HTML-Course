@@ -2,17 +2,29 @@
 
 <head>
     <title>Chapter 2 - Lab</title>
-    
+
     <!--grab link for jquery-->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    
+
     <!--produce list of classes    -->
     <script>
-        $(document).ready(function(){
-            $.each($('li'), function(){
+        $(document).ready(function() {
+            $.each($('li'), function() {
+                //console log the class
                 console.log($(this).attr('class'));
-                //grab results selector and make a list of the classes to output to page
-                $('#results').append('<li>' + $(this).attr('class') + '</li>');
+            });
+
+            $('button').click(function(e) {
+                //prevent from reloading page from form
+                e.preventDefault();
+                
+                $.each($('li'), function() {
+                    //grab results selector and make a list of the classes to output to page
+                    $(this).append(" | <span style='color:green'>" + $(this).attr('class') + "</span>");
+                });
+                
+                $('button').attr("disabled", true);
+
             });
         });
     </script>
@@ -38,11 +50,14 @@
         <li class="bowers">List Item</li>
         <li class="course">List Item</li>
     </ul>
-    
+
     <!--Post results to list below-->
     <div>
-        <h2>List of classes for the above list items:</h2>
-        <ul id="results"></ul>
+        <h2>Click to see classes for the above list items:</h2>
+        <!--        <ul id="results"></ul>-->
+        <form>
+            <button>Click here</button>
+        </form>
     </div>
 </body>
 
