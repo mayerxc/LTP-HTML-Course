@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>Chapter 4 - Lab</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('a[title="Click me"]').click(function(){
+                alert('clicked');
+            });
+            $('a[title="Hover over me"]').hover(function(){
+                alert('hovered!');
+            });
+            $('a[title="double click me"]').dblclick(function(){
+                alert('double clicked');
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <a href="#" title="Click me">Click me</a> 
+    <br />
+    <br />
+    <br />
+    <a href="#" title="Hover over me">Hover over me</a> 
+    <br />
+    <br />
+    <br />
+    <a href="#" title="double click me">Double Click me</a>
+</body>
+
+</html>
