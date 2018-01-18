@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <title>Lab 6</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            //hide initially
+            $('#output').hide();
+            
+            $('#button').click(function() {
+                let username = $('#username').val();
+                let email = $('#email').val();
+                let password = $('#password').val();
+                console.log(username, email, password);
+
+                //needed to set up php devserver for url, then it worked, no cors issue.
+                $.ajax({
+                    url: 'http://127.0.0.1/edsa-06_lab/Sample/data.php',
+                    type: 'POST',
+                    data: {
+                        USERNAME: username,
+                        EMAIL: email,
+                        PASSWORD: password
+                    },
+                    success: function(data) {
+                        $('#output').text("It worked!");
+                        //if checked then add message
+                        if ( $('#newsletter').prop('checked') ) {
+                            $('#output').append('<br />You are now subscribed to the newsletter');
+                        }
+                        //if checked then do fade in and out
+                        if ( $('#animate').prop('checked') ) {
+                            $('form').fadeOut(1000, function() {
+                                $('#output').fadeIn(1000);
+                            });
+                        } else {
+                            $('#output').show();
+                            $('form').hide();
+                        }
+                        
+                        console.log(data);
+                    },
+                    error: function(data) {
+                        $('#output').text("This sucks!");
+                        console.log(data);
+                    }
+                });
+
+
+            });
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="output"></div>
+    <form id="register">
+        <input type="text" placeholder="Username" id="username" /><br />
+        <input type="text" placeholder="Email" id="email" /><br />
+        <input type="password" placeholder="Password" id="password" /><br />
+        <input type="button" value="Submit" id="button" />
+        <br />
+        <input type="checkbox" id="newsletter" />Newsletter
+        <br />
+        <input type="checkbox" id="animate" />Animate transaction?
+    </form>
+</body>
+
+</html>

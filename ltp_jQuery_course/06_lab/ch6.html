@@ -1,0 +1,55 @@
+<html>
+	<head>
+    	<title>Lab 2</title>
+        <script src="http://code.jquery.com/jquery-1.7.2.min.js"></script>
+        <script>
+			$(document).ready(function(){
+				var submitbtn = $('#send').click(function(){
+					var username = $('#username').val();
+					var email = $('#email').val();
+					var password = $('#password').val();
+					
+					$.ajax({
+						url: 'Sample/data.php',
+						data: {
+							USERNAME: username,
+							EMAIL: email,
+							PASSWORD: password
+						},
+						type: 'POST',
+						success: function(data){
+							$('#output').append(data);
+						}
+					});
+					
+					if($('#newsletter').is(':checked')){
+						$('#output').append('You are now subscribed to the newsletter');
+					}
+					if($('#animate').is(':checked')){
+						$('#register').fadeOut(1000, function(){
+							$('#output').fadeIn(1000);
+						});
+					} else {
+						$('#register').hide(function(){
+							$('#output').show();
+						});
+					}
+					
+				});
+				
+				
+			});
+		</script>
+    </head>
+    <body>
+    <div id="output" style="display: none;"></div>
+    	<form id="register">
+        	<input type="text" placeholder="Username" id="username" /><br />
+            <input type="text" placeholder="Email" id="email" /><br />
+            <input type="password" placeholder="Password" id="password" /><br />
+            <input type="button" id="send" value="Submit" /><br />
+            <input type="checkbox" id="newsletter" /> Newsletter<br />
+            <input type="checkbox" id="animate" /> Animate transaction?
+        </form>
+    </body>
+</html>
